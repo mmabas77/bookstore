@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "fc89178d-814f-44a1-bee2-f15f90147483",
+		"name": "Bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28419634",
+		"_collection_link": "https://orange-escape-851311.postman.co/workspace/NodeJS-Bookstore~fec4ba12-4d1e-41a1-bb6f-e615a8cea048/collection/28419634-fc89178d-814f-44a1-bee2-f15f90147483?action=share&source=collection_link&creator=28419634"
+	},
+	"item": [
+		{
+			"name": "GetBooks",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/67aef0bc2346f65fbaae7876",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"67aef0bc2346f65fbaae7876"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddBook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"The Hobbit\",\r\n    \"author\": \"J.R.R. Tolkien\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete book by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/67aef0bc2346f65fbaae7876",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"67aef0bc2346f65fbaae7876"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
