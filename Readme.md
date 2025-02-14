@@ -16,6 +16,7 @@ Before diving into the code, let's understand some key terms:
     - **D**elete (Remove data)
 - **Middleware**: A function that runs between receiving a request and sending a response, often used for processing data (like parsing JSON).
 - **JSON (JavaScript Object Notation)**: A lightweight format for storing and transporting data.
+- **Postman**: A tool for testing APIs by sending requests and viewing responses. download it from [here](https://www.postman.com/downloads/)
 
 ## 📖 Project Overview
 
