@@ -8,11 +8,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/bookstore').then(() => console.log("✅ Connected to MongoDB"))
+mongoose.connect('mongodb://127.0.0.1:27017/bookstore').then(
+    () => console.log("✅ Connected to MongoDB")
+)
     .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
 // Define Book Schema
-const bookSchema = new mongoose.Schema({
+const bookSchema
+    = new mongoose.Schema({
     title: String,
     author: String
 });
@@ -38,7 +41,8 @@ app.post('/books', async (req, res) => {
     }
 
     try {
-        const newBook = new Book({ title, author });
+        const newBook
+            = new Book({ title, author });
         await newBook.save();
         res.status(201).json(newBook);
     } catch (error) {
@@ -49,7 +53,8 @@ app.post('/books', async (req, res) => {
 // 3. Get a book by ID
 app.get('/books/:id', async (req, res) => {
     try {
-        const book = await Book.findById(req.params.id);
+        const book =
+            await Book.findById(req.params.id);
         if (!book) {
             return res.status(404).json({ message: "Book not found" });
         }
@@ -62,7 +67,8 @@ app.get('/books/:id', async (req, res) => {
 // 4. Delete a book by ID
 app.delete('/books/:id', async (req, res) => {
     try {
-        const deletedBook = await Book.findByIdAndDelete(req.params.id);
+        const deletedBook =
+            await Book.findByIdAndDelete(req.params.id);
         if (!deletedBook) {
             return res.status(404).json({ message: "Book not found" });
         }

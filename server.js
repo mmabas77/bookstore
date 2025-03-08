@@ -4,7 +4,7 @@ const PORT = 3000;
 
 // Middleware to parse JSON and form data
 app.use(express.json()); // For JSON
-app.use(express.urlencoded({ extended: true })); // For form data
+app.use(express.urlencoded({extended: true})); // For form data
 
 // In-memory array to store books
 let books = [
